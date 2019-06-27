@@ -2,14 +2,14 @@ package com.example.kotelmania;
 
 import android.content.Intent;
 import android.database.Cursor;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+
+import com.google.firebase.auth.FirebaseAuth;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -21,7 +21,7 @@ public class listActivity extends AppCompatActivity {
     public ListView lst;
     public DBHelper dbHelper;
     private ArrayList<Note> noteList;
-    Button btn, btn2;
+    Button btn, btn2, signOutBtn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -81,6 +81,18 @@ public class listActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent3 = new Intent(v.getContext(), DonateActivity.class);
                 startActivity(intent3);
+                finishActivity(1);
+            }
+        });
+        signOutBtn = findViewById(R.id.signOut);
+        signOutBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
+                firebaseAuth.signOut();
+                Intent intent4 = new Intent(v.getContext(), myLogin.class);
+                startActivity(intent4);
                 finishActivity(1);
             }
         });

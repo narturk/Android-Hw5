@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ccbb3333"
+    android:padding="40dp"
+    android:orientation="vertical"
+    android:animateLayoutChanges="true"
+    tools:context=".myLogin">
+
+<EditText
+    android:id="@+id/email"
+    android:textColor="#f0f0f0"
+    android:textColorHint="#cccccc"
+    android:textSize="18sp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:hint="Email"
+    android:inputType="textEmailAddress" />
+
+<EditText
+    android:id="@+id/password"
+    android:textColor="#f0f0f0"
+    android:textColorHint="#cccccc"
+    android:textSize="18sp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:hint="Password"
+    android:inputType="textPassword" />
+
+<Button
+    android:layout_marginTop="20dp"
+    android:id="@+id/login"
+    android:text="Login"
+    android:textColor="#f0f0f0"
+    android:textSize="18sp"
+    android:background="@color/colorPrimary"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" />
+
+    <Button
+        android:layout_marginTop="20dp"
+        android:id="@+id/register"
+        android:text="Register"
+        android:textColor="#f0f0f0"
+        android:textSize="18sp"
+        android:background="@color/colorPrimary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+<TextView
+    android:textColor="#f0f0f0"
+    android:visibility="gone"
+    android:id="@+id/registerTv"
+    android:tag="login"
+    android:layout_marginTop="10dp"
+    android:gravity="center"
+    android:text="have an account? sign in!"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" />
+
+</LinearLayout>
