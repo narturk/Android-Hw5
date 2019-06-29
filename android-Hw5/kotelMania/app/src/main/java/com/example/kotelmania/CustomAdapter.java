@@ -1,24 +1,18 @@
 package com.example.kotelmania;
 
 import android.content.Context;
-import android.content.Intent;
-import android.media.Image;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.EditText;
-import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
-import java.util.zip.Inflater;
 
 public class CustomAdapter extends BaseAdapter {
-    Context context;
-    ArrayList<Note> noteList;
-    LayoutInflater inflter;
+    public Context context;
+    public ArrayList<Note> noteList;
+    private LayoutInflater inflter;
 
     public CustomAdapter(Context applicationContext, ArrayList<Note> noteList) {
         this.context = context;

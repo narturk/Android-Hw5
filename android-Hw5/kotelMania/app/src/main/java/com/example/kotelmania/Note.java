@@ -2,41 +2,64 @@ package com.example.kotelmania;
 
 public class Note {
 
-    public int ID;
-    public String title;
-    public String content;
-    public String status;
-    public String date;
+    public String id, title, content, status, date;
 
-    public Note(int ID, String title, String content, String status, String date) {
-        this.ID = ID;
+    public Note(){}
+
+    public Note(String id, String title, String content, String status, String date){
+        this.id = id;
         this.title = title;
         this.content = content;
         this.status = status;
         this.date = date;
     }
 
-
-    public static final String TABLE_NAME = "Notes";
-    public static final String COLUMN_ID = "id";
-    public static final String COLUMN_TITLE = "title";
-    public static final String COLUMN_CONTENT = "content";
-    public static final String COLUMN_STATUS = "status";
-    public static final String COLUMN_DATE = "date";
-
-    public int getID(){
-        return ID;
+    @Override
+    public String toString(){
+        return "id='"+id+'\''+
+                ", title='"+title+'\''+
+                ", content='"+content+'\''+
+                ", status='"+status+'\''+
+                ", date='"+date+'\'';
     }
-    public String getTitle(){
+
+    public String getId() {
+        return id;
+    }
+
+    public String getTitle() {
         return title;
     }
-    public String getContent(){
+
+    public String getContent() {
         return content;
     }
-    public String getStatus(){
+
+    public String getStatus() {
         return status;
     }
-    public String getDate(){
+
+    public String getDate() {
         return date;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
     }
 }

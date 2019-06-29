@@ -16,8 +16,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".DonateActivity" />
-        <activity android:name=".EditNote" />
         <activity android:name=".AddNote" />
         <activity android:name=".listActivity">
 

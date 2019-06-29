@@ -30,6 +30,7 @@ public class myLogin extends AppCompatActivity {
         setContentView(R.layout.my_login);
 
         firebaseAuth = FirebaseAuth.getInstance();
+        firebaseAuth.signOut();
         FirebaseUser user = firebaseAuth.getCurrentUser();
 
         if(user != null){
