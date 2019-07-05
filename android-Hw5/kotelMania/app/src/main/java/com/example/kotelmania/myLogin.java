@@ -30,7 +30,6 @@ public class myLogin extends AppCompatActivity {
         setContentView(R.layout.my_login);
 
         firebaseAuth = FirebaseAuth.getInstance();
-        firebaseAuth.signOut();
         FirebaseUser user = firebaseAuth.getCurrentUser();
 
         if(user != null){
@@ -69,7 +68,6 @@ public class myLogin extends AppCompatActivity {
                                     startActivity(intent);
 
                                 } else {
-                                    Log.i("failed", "cant log int");
                                     Toast.makeText(myLogin.this, "Login failed.",
                                             Toast.LENGTH_SHORT).show();
                                 }
@@ -102,7 +100,6 @@ public class myLogin extends AppCompatActivity {
                                     startActivity(intent);
 
                                 } else {
-                                    Log.i("failed", "cant register");
                                     Toast.makeText(myLogin.this, "Register failed.",
                                             Toast.LENGTH_SHORT).show();
                                 }

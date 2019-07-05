@@ -33,11 +33,9 @@ public class AddNote extends AppCompatActivity{
         setContentView(R.layout.activity_add_note);
 
         id = getIntent().getIntExtra("lastId", id+1);
-        Log.d(null, "onCreate: id: "+id);
 
         String currentUser = FirebaseAuth.getInstance().getCurrentUser().getUid();
         DatabaseReference ref = database.getReference(currentUser).child("size");
-        Log.d(null, "onCreate: "+ref.toString());
 
         title = (EditText) findViewById(R.id.NoteTitle);
         content = (EditText) findViewById(R.id.NoteText);
@@ -46,7 +44,6 @@ public class AddNote extends AppCompatActivity{
         send.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.d(null, "onClick: in the beginning of the click");
                 String _title = title.getText().toString();
                 if(_title .isEmpty()){
                     title.setError("Title can't be empty");
@@ -71,15 +68,10 @@ public class AddNote extends AppCompatActivity{
 
                 database.getReference(currentUser).child("size").setValue(id);
 
-                Log.d(null, "onClick: in the end of the click");
-                id++;
-
                 Intent intent = new Intent(getApplicationContext(), listActivity.class);
                 startActivity(intent);
                 finishActivity(1);
             }
         });
-
-
     }
 }

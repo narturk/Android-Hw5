@@ -45,7 +45,6 @@ public class listActivity extends AppCompatActivity {
         String currentUser = FirebaseAuth.getInstance().getCurrentUser().getUid();
         DatabaseReference ref = database.getReference(currentUser).child("notes");
 
-
         ref.keepSynced(true);
         ref.addValueEventListener(new ValueEventListener() {
             @Override
@@ -64,10 +63,17 @@ public class listActivity extends AppCompatActivity {
         listView = (ListView) findViewById(R.id.NoteList);
         adapter = new CustomAdapter(this,peteks);
         listView.setAdapter(adapter);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent1 = new Intent(view.getContext(), EditNote.class);
+                intent1.putExtra("index", position);
+                startActivityForResult(intent1, position);
+                finishActivity(1);
+            }
+        });
 
         add = (Button) findViewById(R.id.AddNote);
-
-        Log.d(null, "onCreate: lastId: "+lastId);
 
         add.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -91,6 +97,14 @@ public class listActivity extends AppCompatActivity {
             }
         });
         donate = (Button) findViewById(R.id.Donate);
+        donate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent3 = new Intent(v.getContext(), DonateActivity.class);
+                startActivity(intent3);
+                finishActivity(1);
+            }
+        });
     }
 
     public int checkDB(DataSnapshot dataSnapshot){
@@ -99,13 +113,12 @@ public class listActivity extends AppCompatActivity {
                     new GenericTypeIndicator<Map<String, Note>>(){};
             HashMap<String, Note> dataMap = (HashMap<String, Note>) dataSnapshot.getValue(g);
             peteks.clear();
-            for (String key : dataMap.keySet()) {
-                Log.d(null, "checkDB: " + key);
-                peteks.add(dataMap.get(key));
+            int size = dataMap.keySet().size();
+            for (int i=1; i<= size; i++) {
+                peteks.add(dataMap.get("note-"+i));
             }
 
             return peteks.size()+1;
-//            Log.d(null, "checkDB: lastid: "+lastId);
         }
 
         return 1;
