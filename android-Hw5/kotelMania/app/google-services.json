@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "770481351987",
+    "firebase_url": "https://kotelmania2.firebaseio.com",
+    "project_id": "kotelmania2",
+    "storage_bucket": "kotelmania2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:770481351987:android:a497c043296fcb87",
+        "android_client_info": {
+          "package_name": "com.example.kotelmania"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "770481351987-hea4nrui5ogilr5hukpe477shi0lpq9d.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.kotelmania",
+            "certificate_hash": "477212b8992c5c1fe9483df5e6c06814d3ac589f"
+          }
+        },
+        {
+          "client_id": "770481351987-mdbfq2d0k2ti23k22oievq5mtv08o0ik.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDZCEtOaFL2L52tbfIrUtaogIDyh842E0Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "770481351987-mdbfq2d0k2ti23k22oievq5mtv08o0ik.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
